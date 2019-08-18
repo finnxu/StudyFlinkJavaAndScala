@@ -26,7 +26,7 @@ public class JavaTableSQLApi {
 
     public static void main(String[] args) throws Exception {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-        BatchTableEnvironment table = BatchTableEnvironment.getTableEnvironment(env);
+        BatchTableEnvironment table = BatchTableEnvironment.create(env);
         tableSQLApi(env, table);
     }
 
