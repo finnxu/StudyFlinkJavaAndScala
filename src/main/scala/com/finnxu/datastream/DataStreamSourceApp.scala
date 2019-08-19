@@ -1,6 +1,7 @@
 package com.finnxu.datastream
 
 import org.apache.flink.api.scala._
+import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 
 /**
@@ -34,6 +35,7 @@ object DataStreamSourceApp {
 
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
+    env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
     //    socktFunction(env)
     //    nonParallelSourceFunction(env)
     //    parallelSourceFunction(env)
